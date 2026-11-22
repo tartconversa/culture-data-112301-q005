@@ -1,0 +1,12 @@
+{"id":"Q0","customer":"C0","works":["W0","W8"],"territory":"EU","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":true,"alternative_group":"ALT0","expires_on":"2026-11-15"}
+{"id":"Q1","customer":"C1","works":["W1","W9"],"territory":"NA","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT1","expires_on":"2026-11-15"}
+{"id":"Q2","customer":"C2","works":["W2","W10"],"territory":"JP","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT2","expires_on":"2026-11-15"}
+{"id":"Q3","customer":"C3","works":["W3","W11"],"territory":"EU","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT3","expires_on":"2026-11-15"}
+{"id":"Q4","customer":"C4","works":["W4","W12"],"territory":"NA","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":true,"alternative_group":"ALT4","expires_on":"2026-11-15"}
+{"id":"Q5","customer":"C5","works":["W5","W13"],"territory":"JP","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT5","expires_on":"2026-11-15"}
+{"id":"Q6","customer":"C0","works":["W6","W14"],"territory":"EU","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT0","expires_on":"2026-11-15"}
+{"id":"Q7","customer":"C1","works":["W7","W15"],"territory":"NA","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT1","expires_on":"2026-11-15"}
+{"id":"Q8","customer":"C2","works":["W8","W16"],"territory":"JP","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":true,"alternative_group":"ALT2","expires_on":"2026-11-15"}
+{"id":"Q9","customer":"C3","works":["W9","W17"],"territory":"EU","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT3","expires_on":"2026-11-15"}
+{"id":"Q10","customer":"C4","works":["W10","W18"],"territory":"NA","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT4","expires_on":"2026-11-15"}
+{"id":"Q11","customer":"C5","works":["W11","W19"],"territory":"JP","purpose":"release","from":"2027-01-01","to":"2027-12-31","exclusive":false,"alternative_group":"ALT5","expires_on":"2026-11-15"}

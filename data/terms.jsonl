@@ -1,0 +1,3 @@
+{"id":"usage","kind":"usage","unit_minor":40,"minimum_minor":0,"cap_minor":null,"allowed_with":["guarantee"]}
+{"id":"capped","kind":"period","unit_minor":25,"minimum_minor":80000,"cap_minor":150000,"allowed_with":[]}
+{"id":"guarantee","kind":"minimum","unit_minor":20,"minimum_minor":100000,"cap_minor":null,"allowed_with":["usage"]}

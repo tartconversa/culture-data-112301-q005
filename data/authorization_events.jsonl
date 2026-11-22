@@ -1,0 +1,3 @@
+{"id":"AE1","request":"Q0","party":"C0","kind":"customer_accept","on":"2026-10-04","work":null,"territory":"EU"}
+{"id":"AE2","request":"Q0","party":"H0","kind":"owner_confirm","on":"2026-10-05","work":"W0","territory":"EU"}
+{"id":"AE3","request":"Q0","party":"H0","kind":"owner_pending","on":"2026-10-05","work":"W8","territory":"EU"}

@@ -1,0 +1,489 @@
+{
+  "format": "jsonl-utf8-v1",
+  "synthetic": true,
+  "tables": {
+    "works": {
+      "description": "原作及衍生谱系。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "作品"
+        },
+        "kind": {
+          "type": "str",
+          "nullable": false,
+          "description": "类型"
+        },
+        "parents": {
+          "type": "list",
+          "nullable": false,
+          "description": "原作引用"
+        },
+        "owner": {
+          "type": "str",
+          "nullable": false,
+          "description": "登记权利人"
+        }
+      },
+      "key": "id",
+      "references": {},
+      "sha256": "e057c01a351e6c0f8a1cdf8076d4dcdc3da176b3ea99323c2e12dc313fa8f7b0",
+      "row_count": 20
+    },
+    "licenses": {
+      "description": "既有有效许可，不把衍生许可自动扩大到原作。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "许可"
+        },
+        "work": {
+          "type": "str",
+          "nullable": false,
+          "description": "作品"
+        },
+        "customer": {
+          "type": "str",
+          "nullable": false,
+          "description": "客户"
+        },
+        "territories": {
+          "type": "list",
+          "nullable": false,
+          "description": "地域集合"
+        },
+        "purpose": {
+          "type": "str",
+          "nullable": false,
+          "description": "用途"
+        },
+        "from": {
+          "type": "str",
+          "nullable": false,
+          "description": "起日"
+        },
+        "to": {
+          "type": "str",
+          "nullable": false,
+          "description": "末日"
+        },
+        "exclusive": {
+          "type": "bool",
+          "nullable": false,
+          "description": "独占性"
+        },
+        "sublicense": {
+          "type": "bool",
+          "nullable": false,
+          "description": "是否允许转授权"
+        },
+        "guarantee_pool": {
+          "type": "str",
+          "nullable": false,
+          "description": "共同保底池"
+        }
+      },
+      "key": "id",
+      "references": {
+        "work": [
+          "works",
+          "id"
+        ]
+      },
+      "sha256": "f452b2201be095f4bae84181eb8f81acb417f4a77bd8ca9a4a2da4572c0b2813",
+      "row_count": 36
+    },
+    "releases": {
+      "description": "发行包与正式回执。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "发行包"
+        },
+        "customer": {
+          "type": "str",
+          "nullable": false,
+          "description": "客户"
+        },
+        "territory": {
+          "type": "str",
+          "nullable": false,
+          "description": "地域"
+        },
+        "works": {
+          "type": "list",
+          "nullable": false,
+          "description": "使用作品"
+        },
+        "packaged_on": {
+          "type": "str",
+          "nullable": false,
+          "description": "打包日"
+        },
+        "released_on": {
+          "type": "str",
+          "nullable": true,
+          "description": "正式发行日，空为未确认"
+        },
+        "receipt_on": {
+          "type": "str",
+          "nullable": true,
+          "description": "回执到达日"
+        },
+        "end_on": {
+          "type": "str",
+          "nullable": true,
+          "description": "发行存续结束日，空为未结束"
+        }
+      },
+      "key": "id",
+      "references": {},
+      "sha256": "75fe2df08fb804a15b2ed7d7ed7814fad0a86ea2fbd7a771a645c0a578824859",
+      "row_count": 260
+    },
+    "usage_logs": {
+      "description": "原始使用观察，镜像以origin_event关联。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "日志"
+        },
+        "origin_event": {
+          "type": "str",
+          "nullable": false,
+          "description": "原始使用事件身份"
+        },
+        "release": {
+          "type": "str",
+          "nullable": false,
+          "description": "发行包"
+        },
+        "on": {
+          "type": "str",
+          "nullable": false,
+          "description": "观察日"
+        },
+        "stage": {
+          "type": "str",
+          "nullable": false,
+          "description": "使用阶段"
+        },
+        "observed_units": {
+          "type": "int",
+          "nullable": false,
+          "description": "观测使用单位"
+        },
+        "coverage": {
+          "type": "float",
+          "nullable": false,
+          "description": "已知日志覆盖率"
+        }
+      },
+      "key": "id",
+      "references": {
+        "release": [
+          "releases",
+          "id"
+        ]
+      },
+      "sha256": "0bb4fcba7b3be6f162c6f79a2e4cfce102cbb93020c20390571994bd2e098343",
+      "row_count": 1800
+    },
+    "statements": {
+      "description": "客户按季度提交的使用声明。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "声明"
+        },
+        "customer": {
+          "type": "str",
+          "nullable": false,
+          "description": "客户"
+        },
+        "quarter": {
+          "type": "str",
+          "nullable": false,
+          "description": "季度"
+        },
+        "territory": {
+          "type": "str",
+          "nullable": false,
+          "description": "地域"
+        },
+        "work": {
+          "type": "str",
+          "nullable": false,
+          "description": "作品"
+        },
+        "units": {
+          "type": "int",
+          "nullable": false,
+          "description": "声明使用量"
+        },
+        "revision": {
+          "type": "int",
+          "nullable": false,
+          "description": "修订号"
+        },
+        "received_on": {
+          "type": "str",
+          "nullable": false,
+          "description": "到达日"
+        }
+      },
+      "key": "id",
+      "references": {
+        "work": [
+          "works",
+          "id"
+        ]
+      },
+      "sha256": "085fc307e6023400bcfc7588c1053bf540cd794cc9f289dd87256e97892b285e",
+      "row_count": 60
+    },
+    "guarantees": {
+      "description": "可承保的共享最低保证金。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "担保池"
+        },
+        "currency": {
+          "type": "str",
+          "nullable": false,
+          "description": "币种"
+        },
+        "limit_minor": {
+          "type": "int",
+          "nullable": false,
+          "description": "担保总额"
+        },
+        "reserved_minor": {
+          "type": "int",
+          "nullable": false,
+          "description": "既有有效承诺已占"
+        },
+        "works": {
+          "type": "list",
+          "nullable": false,
+          "description": "可覆盖作品"
+        },
+        "territories": {
+          "type": "list",
+          "nullable": false,
+          "description": "可覆盖地域"
+        }
+      },
+      "key": "id",
+      "references": {},
+      "sha256": "44b7576268729434c0ccd31bcf18b1e6f0d6e5ca30a1eff64a2f592f4008f2aa",
+      "row_count": 3
+    },
+    "terms": {
+      "description": "供续约组合选择的商业条款。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "条款"
+        },
+        "kind": {
+          "type": "str",
+          "nullable": false,
+          "description": "按用量、包期或保底"
+        },
+        "unit_minor": {
+          "type": "int",
+          "nullable": false,
+          "description": "用量单价"
+        },
+        "minimum_minor": {
+          "type": "int",
+          "nullable": false,
+          "description": "最低保证额"
+        },
+        "cap_minor": {
+          "type": "int",
+          "nullable": true,
+          "description": "封顶额，空为无"
+        },
+        "allowed_with": {
+          "type": "list",
+          "nullable": false,
+          "description": "允许共同组合条款"
+        }
+      },
+      "key": "id",
+      "references": {},
+      "sha256": "5dc164c5dc66e558ff0d0587365ea276c9ba12d539bdf48a4800f4de39fc2ba4",
+      "row_count": 3
+    },
+    "renewal_requests": {
+      "description": "客户拟续约范围及互斥报价组。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "请求"
+        },
+        "customer": {
+          "type": "str",
+          "nullable": false,
+          "description": "客户"
+        },
+        "works": {
+          "type": "list",
+          "nullable": false,
+          "description": "作品集合"
+        },
+        "territory": {
+          "type": "str",
+          "nullable": false,
+          "description": "地域"
+        },
+        "purpose": {
+          "type": "str",
+          "nullable": false,
+          "description": "用途"
+        },
+        "from": {
+          "type": "str",
+          "nullable": false,
+          "description": "许可起日"
+        },
+        "to": {
+          "type": "str",
+          "nullable": false,
+          "description": "许可末日"
+        },
+        "exclusive": {
+          "type": "bool",
+          "nullable": false,
+          "description": "独占要求"
+        },
+        "alternative_group": {
+          "type": "str",
+          "nullable": false,
+          "description": "同组互斥报价"
+        },
+        "expires_on": {
+          "type": "str",
+          "nullable": false,
+          "description": "报价到期日"
+        }
+      },
+      "key": "id",
+      "references": {},
+      "sha256": "c4938bfacfb4011ba60e0e30d774a35b07baaedd4e97622a3bd494bc345a26f9",
+      "row_count": 12
+    },
+    "authorization_events": {
+      "description": "权利人与客户后续动作。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "动作"
+        },
+        "request": {
+          "type": "str",
+          "nullable": false,
+          "description": "请求"
+        },
+        "party": {
+          "type": "str",
+          "nullable": false,
+          "description": "动作方"
+        },
+        "kind": {
+          "type": "str",
+          "nullable": false,
+          "description": "接受或权利确认状态"
+        },
+        "on": {
+          "type": "str",
+          "nullable": false,
+          "description": "到达日"
+        },
+        "work": {
+          "type": "str",
+          "nullable": true,
+          "description": "涉及作品"
+        },
+        "territory": {
+          "type": "str",
+          "nullable": false,
+          "description": "涉及地域"
+        }
+      },
+      "key": "id",
+      "references": {
+        "request": [
+          "renewal_requests",
+          "id"
+        ],
+        "work": [
+          "works",
+          "id"
+        ]
+      },
+      "sha256": "4a79e1b69d0684bd433920a5732b60a4d99394a34273125238985f6974f0891f",
+      "row_count": 3
+    },
+    "late_evidence": {
+      "description": "后续发行与归属裁决资料。",
+      "fields": {
+        "id": {
+          "type": "str",
+          "nullable": false,
+          "description": "资料"
+        },
+        "kind": {
+          "type": "str",
+          "nullable": false,
+          "description": "证据类别"
+        },
+        "release": {
+          "type": "str",
+          "nullable": true,
+          "description": "发行包"
+        },
+        "work": {
+          "type": "str",
+          "nullable": true,
+          "description": "作品"
+        },
+        "on": {
+          "type": "str",
+          "nullable": false,
+          "description": "到达日"
+        },
+        "value": {
+          "type": "str",
+          "nullable": false,
+          "description": "正式发行日或裁决权利人"
+        }
+      },
+      "key": "id",
+      "references": {
+        "release": [
+          "releases",
+          "id"
+        ],
+        "work": [
+          "works",
+          "id"
+        ]
+      },
+      "sha256": "39c156339a98a18561a961616c59df8f1cbae04a0c2d1e4db906a79653488029",
+      "row_count": 2
+    }
+  }
+}

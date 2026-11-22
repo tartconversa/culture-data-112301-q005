@@ -1,0 +1,3 @@
+{"id":"GP0","currency":"USD","limit_minor":500000,"reserved_minor":180000,"works":["W0","W3","W6","W9","W12","W15","W18"],"territories":["EU","NA","JP"]}
+{"id":"GP1","currency":"USD","limit_minor":600000,"reserved_minor":180000,"works":["W1","W4","W7","W10","W13","W16","W19"],"territories":["EU","NA","JP"]}
+{"id":"GP2","currency":"USD","limit_minor":700000,"reserved_minor":180000,"works":["W2","W5","W8","W11","W14","W17"],"territories":["EU","NA","JP"]}
